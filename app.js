@@ -50,7 +50,7 @@ const store = MongoStore.create({
     }
 });
 
-store.on("error", function(e) {
+store.on("error", function (e) {
     console.log("SESSION STORE ERROR", e);
 })
 
@@ -138,7 +138,7 @@ passport.deserializeUser(User.deserializeUser()); // for getting a user out of t
 app.use((req, res, next) => {
     // console.log(req.session);
     // console.log(req.query);
-    if (!['/login', '/'].includes(req.originalUrl)) {
+    if (!['/login', '/register', '/'].includes(req.originalUrl)) {
         req.session.returnTo = req.originalUrl;
     }
     res.locals.currentUser = req.user; //user is a passport method on request object which contains info about the user
