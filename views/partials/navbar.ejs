@@ -12,7 +12,7 @@
                 <a class="nav-link" href="/campgrounds/new">New Campground</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <% if(!currentUser) { %>
+                <% if(!locals.currentUser) { %>
                     <a class="nav-link" href="/login">Login</a>
                     <a class="nav-link" href="/register">Register</a>
                 <% } else { %> 
